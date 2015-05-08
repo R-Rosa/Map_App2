@@ -1,9 +1,14 @@
 package com.example.ricardo.map_app;
 
+import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+
+import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
@@ -16,6 +21,18 @@ public class MapsActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
+
+        Location location = new Location("initial location");
+
+        location.setLatitude(38.810149);
+        location.setLongitude(-9.332124);
+
+        CenterMap(location);
+        PlaceMarker(location);
+    }
+
+    private void PlaceMarker(Location location) {
+
     }
 
     @Override
@@ -62,5 +79,16 @@ public class MapsActivity extends FragmentActivity {
         mMap.addMarker(new MarkerOptions().position(new LatLng(0, 0)).title("Marker"));
     }
 
+    private void CenterMap(Location location){
+        LatLng position = new LatLng(location.getLatitude(), location.getLongitude());
+        float zoom = 17;//mMap.getMaxZoomLevel();
+        float tilt = 0;
+        float bearing = 0;
+        CameraPosition cameraPosition = new CameraPosition(position,zoom,tilt,bearing );
+
+        CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
+
+        mMap.moveCamera(cameraUpdate);
+    }
 
 }
