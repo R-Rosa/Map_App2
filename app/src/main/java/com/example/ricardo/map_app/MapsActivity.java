@@ -3,11 +3,15 @@ package com.example.ricardo.map_app;
 import android.location.Location;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.example.ricardo.poi.SkatePark;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -29,23 +33,7 @@ public class MapsActivity extends FragmentActivity {
 
         SkateParkIds = new HashMap<String,String>();
 
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                    if(SkateParkIds.containsKey(marker.getId())){
 
-                        String markerType = SkateParkIds.get(marker.getId());
-                        if(markerType.Equals("skatepark")){
-
-                            //show window
-
-                        }
-                    }
-
-
-                return false;
-            }
-        });
 
         /* */
         Location location = new Location("initial location");
@@ -65,6 +53,26 @@ public class MapsActivity extends FragmentActivity {
         CenterMap(skatePark.getLocation());
 //      PlaceMarker(location);
         PlaceMarker(skatePark);
+
+        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                if(SkateParkIds.containsKey(marker.getId())){
+
+                    String markerType = SkateParkIds.get(marker.getId());
+                    if(markerType == "skatepark"){
+
+                        Button TestButton = (Button) findViewById(R.id.TestButton);
+                        TestButton.setVisibility(View.VISIBLE);
+
+                        RelativeLayout relativeLayout = (RelativeLayout)findViewById(R.id.poiDetailsRelativeLayout);
+                        relativeLayout.setVisibility(View.VISIBLE);
+                    }
+                }
+
+                return false;
+            }
+        });
     }
 
     private void PlaceMarker(SkatePark skatePark) {
@@ -113,9 +121,10 @@ public class MapsActivity extends FragmentActivity {
         // Do a null check to confirm that we have not already instantiated the map.
         if (mMap == null) {
             // Try to obtain the map from the SupportMapFragment.
-            mMap = ((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
+
+            mMap=((SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map))
                     .getMap();
-            // Check if we were successful in obtaining the map.
+
             if (mMap != null) {
                 setUpMap();
             }
