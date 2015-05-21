@@ -1,8 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="@android:color/transparent">
+    android:orientation="vertical">
+
+
 
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -21,20 +22,108 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_margin="50dp"
-                android:background="#50ff0000"/>
+                android:background="#50ff0000"
+                android:id="@+id/imageView" />
 
-            <Button
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="New Button"
-                android:id="@+id/TestButton"
-                android:visibility="invisible"
+                android:text="Título..."
+                android:layout_alignTop="@+id/imageView"
+                android:layout_alignLeft="@+id/imageView"
+                android:layout_alignStart="@+id/imageView"
+                android:layout_marginLeft="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="80dp" />
+
+            <!--Close button-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/closeButton"
+                android:src="@drawable/closeicon"
+                android:baselineAlignBottom="false"
+                android:layout_alignRight="@+id/imageView"
+                android:layout_alignEnd="@+id/imageView"
+                android:layout_marginTop="50dp"/>
+
+            <!--Skatepark Title-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Ski Skate Amadora"
+                android:layout_alignRight="@+id/imageView"
+                android:layout_alignEnd="@+id/imageView"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="60dp"
+                android:textSize="20sp"/>
+
+            <!--Foto parque-->
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="300dp"
+                android:id="@+id/imagemSkateParque"
+                android:src="@drawable/imagemskateparque"
+                android:baselineAlignBottom="true"
+                android:layout_marginTop="50dp"
+                android:layout_alignRight="@+id/imageView"
+                android:layout_alignEnd="@+id/imageView"
                 />
 
-            </RelativeLayout>
+            <!--Descrição Title-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Este parque é fixe..."
+                android:layout_alignRight="@+id/imageView"
+                android:layout_alignEnd="@+id/imageView"
+                android:layout_marginTop="300dp"
+                android:layout_marginLeft="70dp"
+                android:textSize="20sp"/>
+               />
+
+            <!--Descrição-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Texto..."
+                android:layout_alignRight="@+id/imageView"
+                android:layout_alignEnd="@+id/imageView"
+                android:layout_marginTop="325dp"
+                android:layout_marginLeft="70dp"
+                android:textSize="14sp"/>
+            />
+
+            <!--Como chegar Title-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Como chegar..."
+                android:layout_alignRight="@+id/imageView"
+                android:layout_alignEnd="@+id/imageView"
+                android:layout_marginTop="400dp"
+                android:layout_marginLeft="70dp"
+                android:textSize="20sp"/>
+            />
+
+            <!--Como chegar-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Texto..."
+                android:layout_alignRight="@+id/imageView"
+                android:layout_alignEnd="@+id/imageView"
+                android:layout_marginTop="425dp"
+                android:layout_marginLeft="70dp"
+                android:textSize="14sp"/>
+            />
+
+        </RelativeLayout>
+
 
 
     </fragment>
+
 
 
 </LinearLayout>
