@@ -5,12 +5,10 @@
 
 
 
-
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:id="@+id/map" tools:context=".MapsActivity"
     android:name="com.google.android.gms.maps.SupportMapFragment">
-
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -23,18 +21,7 @@
                 android:layout_height="fill_parent"
                 android:layout_margin="50dp"
                 android:background="#50ff0000"
-                android:id="@+id/imageView" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Título..."
-                android:layout_alignTop="@+id/imageView"
-                android:layout_alignLeft="@+id/imageView"
-                android:layout_alignStart="@+id/imageView"
-                android:layout_marginLeft="30dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="80dp" />
+                android:id="@+id/backgroundImageView" />
 
             <!--Close button-->
             <ImageView
@@ -43,17 +30,18 @@
                 android:id="@+id/closeButton"
                 android:src="@drawable/closeicon"
                 android:baselineAlignBottom="false"
-                android:layout_alignRight="@+id/imageView"
-                android:layout_alignEnd="@+id/imageView"
+                android:layout_alignRight="@+id/backgroundImageView"
+                android:layout_alignEnd="@+id/backgroundImageView"
                 android:layout_marginTop="50dp"/>
 
             <!--Skatepark Title-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/skateParkTitle"
                 android:text="Ski Skate Amadora"
-                android:layout_alignRight="@+id/imageView"
-                android:layout_alignEnd="@+id/imageView"
+                android:layout_alignRight="@+id/backgroundImageView"
+                android:layout_alignEnd="@+id/backgroundImageView"
                 android:layout_marginTop="50dp"
                 android:layout_marginLeft="60dp"
                 android:textSize="20sp"/>
@@ -62,33 +50,35 @@
             <ImageView
                 android:layout_width="250dp"
                 android:layout_height="300dp"
-                android:id="@+id/imagemSkateParque"
+                android:id="@+id/skateParkPhotoImageView"
                 android:src="@drawable/imagemskateparque"
                 android:baselineAlignBottom="true"
                 android:layout_marginTop="50dp"
-                android:layout_alignRight="@+id/imageView"
-                android:layout_alignEnd="@+id/imageView"
+                android:layout_alignRight="@+id/backgroundImageView"
+                android:layout_alignEnd="@+id/backgroundImageView"
                 />
 
             <!--Descrição Title-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/parkDescriptionTitle"
                 android:text="Este parque é fixe..."
-                android:layout_alignRight="@+id/imageView"
-                android:layout_alignEnd="@+id/imageView"
+                android:layout_alignRight="@+id/backgroundImageView"
+                android:layout_alignEnd="@+id/backgroundImageView"
                 android:layout_marginTop="300dp"
                 android:layout_marginLeft="70dp"
                 android:textSize="20sp"/>
-               />
+            />
 
             <!--Descrição-->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Texto..."
-                android:layout_alignRight="@+id/imageView"
-                android:layout_alignEnd="@+id/imageView"
+                android:id="@+id/parkDescriptionTextView"
+                android:layout_alignRight="@+id/backgroundImageView"
+                android:layout_alignEnd="@+id/backgroundImageView"
                 android:layout_marginTop="325dp"
                 android:layout_marginLeft="70dp"
                 android:textSize="14sp"/>
@@ -98,9 +88,10 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:id="@+id/parkDirectionsTitleTextView"
                 android:text="Como chegar..."
-                android:layout_alignRight="@+id/imageView"
-                android:layout_alignEnd="@+id/imageView"
+                android:layout_alignRight="@+id/backgroundImageView"
+                android:layout_alignEnd="@+id/backgroundImageView"
                 android:layout_marginTop="400dp"
                 android:layout_marginLeft="70dp"
                 android:textSize="20sp"/>
@@ -111,14 +102,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Texto..."
-                android:layout_alignRight="@+id/imageView"
-                android:layout_alignEnd="@+id/imageView"
+                android:id="@+id/parkDirectionsTextView"
+                android:layout_alignRight="@+id/backgroundImageView"
+                android:layout_alignEnd="@+id/backgroundImageView"
                 android:layout_marginTop="425dp"
                 android:layout_marginLeft="70dp"
                 android:textSize="14sp"/>
             />
 
         </RelativeLayout>
+
+
 
 
 
